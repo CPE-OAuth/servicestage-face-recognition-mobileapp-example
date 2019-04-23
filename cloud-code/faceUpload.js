@@ -6,6 +6,7 @@ Parse.Config.get().then(function(config) {
     const username = config.get("iam_userName");
     const password = config.get("iam_password");
     const domainname = config.get("iam_domainName");
+    const projectid  = config.get("projectID");
 
     //Get the valid token from the IAM service.
     var reqToken = require('request');
@@ -60,7 +61,7 @@ Parse.Config.get().then(function(config) {
             token =  response.headers['x-subject-token'];
         
             reqFaceUpload({
-            url: 'https://face.cn-north-1.myhuaweicloud.com/v1/017a290a8242480e82de8db804c1718d/face-sets/'+req.params.imageLibrary+'/faces',
+            url: 'https://face.cn-north-1.myhuaweicloud.com/v1/' + projectid + '/face-sets/'+req.params.imageLibrary+'/faces',
             method: "POST",
             "rejectUnauthorized": false,
             headers: {'Content-Type' : 'application/json', 'X-Auth-Token': token},

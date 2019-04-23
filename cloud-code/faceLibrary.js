@@ -6,6 +6,7 @@ Parse.Config.get().then(function(config) {
     const username = config.get("iam_userName");
     const password = config.get("iam_password");
     const domainname = config.get("iam_domainName");
+    const projectid  = config.get("projectID");
 
     //Get the valid token from the huawei public cloud
     var reqToken = require('request');
@@ -67,7 +68,7 @@ Parse.Config.get().then(function(config) {
                 token =  response.headers['x-subject-token'];
                 //call the face library
                 reqFaceLibr({
-                    url: 'https://face.cn-north-1.myhuaweicloud.com/v1/017a290a8242480e82de8db804c1718d/face-sets',
+                    url: 'https://face.cn-north-1.myhuaweicloud.com/v1/' + projectid + '/face-sets',
                     method: "POST",
                     "rejectUnauthorized": false,
                     headers: {'Content-Type' : 'application/json', 'X-Auth-Token': token},
