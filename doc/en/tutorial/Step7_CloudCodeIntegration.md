@@ -16,7 +16,11 @@ To get the authentication token we should provide valid **username**, **password
 
 1) Open the mbaas console(http://{mbaas-host}:{port}) and click the configuration tab.
  ![Alt text](./imgs/config1.png?raw=true "config")
-2) Add the configuration parameters **username**, **password** and **domain name**.
+2) Add the configuration parameters **username**, **password** and **domain name** and **project id**.
+  
+   Note: Project id is required to use the Face Recognition Service Apis.
+   Refer to https://support.huaweicloud.com/en-us/api-face/face_02_0056.html for details about how to obtain the Project id.
+   
  ![Alt text](./imgs/config2.png?raw=true "config")
  ![Alt text](./imgs/config3.png?raw=true "config")
  
@@ -27,6 +31,7 @@ To get the authentication token we should provide valid **username**, **password
         const username = config.get("userName");
         const password = config.get("password");
         const domainname = config.get("domainName");
+        const projectid  = config.get("projectID");
     }, function(error) {
         res.error(error);
     });
