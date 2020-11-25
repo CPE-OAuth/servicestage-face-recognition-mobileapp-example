@@ -47,7 +47,7 @@ Below are the three cloud code functions used in this demo.
 
 ![Alt text](./imgs/upload1.png?raw=true "upload")
 
-2) Upload the cloud function code. Get code for Face library from http://rnd-gitlab-ca-g.huawei.com/PaaS/servicestage/services/facerecodemo/blob/master/cloud-code/faceLibrary.js 
+2) Upload the cloud function code. Get code for Face library from https://github.com/CPE-OAuth/servicestage-face-recognition-mobileapp-example/tree/master/cloud-code/faceLibrary.js
 
 ![Alt text](./imgs/upload2.png?raw=true "upload")
 
